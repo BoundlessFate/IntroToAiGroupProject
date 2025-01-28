@@ -54,7 +54,7 @@ def sentence1() -> Expr:
     A = Expr('A')
     B = Expr('B')
     C = Expr('C')
-    sentence1 = conjoin([(A | B), (~A % (~B | C)), (~A | ~B | C)])
+    sentence1 = conjoin([(A | B), (~A % (~B | C)), disjoin(~A, ~B, C)])
     return sentence1
     "*** END YOUR CODE HERE ***"
 
