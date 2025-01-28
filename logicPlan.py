@@ -86,7 +86,12 @@ def sentence3() -> Expr:
     """
     "*** BEGIN YOUR CODE HERE ***"
     # util.raiseNotDefined()
-
+    pacman_alive_0 = PropSymbolExpr("PacmanAlive", time=0)
+    pacman_alive_1 = PropSymbolExpr("PacmanAlive", time=1)
+    pacman_born_0 = PropSymbolExpr("PacmanBorn", time=0)
+    pacman_killed_0 = PropSymbolExpr("PacmanKilled", time=0)
+    sentence3 = conjoin([(pacman_alive_1 % ((pacman_alive_0 & ~pacman_killed_0) | (~pacman_alive_0 & pacman_born_0))), (~(pacman_alive_0 & pacman_born_0)), pacman_born_0])
+    return sentence3
     "*** END YOUR CODE HERE ***"
 
 def findModel(sentence: Expr) -> Dict[Expr, bool]:
