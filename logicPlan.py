@@ -50,7 +50,12 @@ def sentence1() -> Expr:
     (not A) or (not B) or C
     """
     "*** BEGIN YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
+    A = Expr('A')
+    B = Expr('B')
+    C = Expr('C')
+    sentence1 = conjoin([(A | B), (~A % (~B | C)), (~A | ~B | C)])
+    return sentence1
     "*** END YOUR CODE HERE ***"
 
 
@@ -88,7 +93,8 @@ def sentence3() -> Expr:
     Pacman is born at time 0.
     """
     "*** BEGIN YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
+
     "*** END YOUR CODE HERE ***"
 
 def findModel(sentence: Expr) -> Dict[Expr, bool]:
