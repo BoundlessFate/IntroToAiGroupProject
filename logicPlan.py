@@ -74,8 +74,8 @@ def sentence2() -> Expr:
     C = Expr('C')
     D = Expr('D')
     return conjoin([C % (B | D), 
-                    A >> (~B ^ ~D),
-                    ~(B ^ ~C) >> A,
+                    A >> (~B & ~D),
+                    ~(B & ~C) >> A,
                     ~D >> C])
     "*** END YOUR CODE HERE ***"
 
